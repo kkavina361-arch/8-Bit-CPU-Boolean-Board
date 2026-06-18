@@ -1,2 +1,11 @@
-# 8-Bit-CPU-Boolean-Board
-Design and FPGA implementation of an 8-bit educational CPU on Boolean Board with Sensor Interface and FSM-based Control Unit.
+# 8-Bit CPU on Boolean Board
+
+Educational 8-bit CPU implemented on Spartan-7 FPGA Boolean Board.
+
+## Features
+
+- Single Bus Architecture
+- Sensor Interface
+- Clock Divider
+- Status LEDs
+- FSM Based Control Unit
