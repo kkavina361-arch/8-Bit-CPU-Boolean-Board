@@ -15,6 +15,9 @@
 - PC Verified
 - MAR Verified
 - RAM Verified
+- IR Verified
+- A Register Verified
+- B Register Verified
 
 ### Vivado
 - PC Verified
