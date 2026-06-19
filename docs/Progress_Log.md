@@ -1,27 +1,34 @@
-# Progress Log
+# CPU Development Progress
 
 ## Completed Modules
 
-### Program Counter (PC)
-Status: PASS
-Simulation: PASS
-Waveform: PASS
+- [x] Program Counter (PC)
+- [x] Memory Address Register (MAR)
+- [x] RAM (16×8)
+- [x] Instruction Register (IR)
+- [x] A Register
+- [x] B Register
 
-### Memory Address Register (MAR)
-Status: PASS
-Simulation: PASS
-Waveform: PASS
+## Verification
 
-### RAM (16x8)
-Status: PASS
-Simulation: PASS
-Waveform: PASS
+### Quartus
+- PC Verified
+- MAR Verified
+- RAM Verified
+
+### Vivado
+- PC Verified
+- MAR Verified
+- RAM Verified
+- IR Verified
+- A Register Verified
+- B Register Verified
+
+Current Status:
+Fetch Path Completed
+Datapath Registers Completed
 
 ## Remaining Modules
-
-- Instruction Register
-- A Register
-- B Register
 - ALU
 - Flag Register
 - Output Register
