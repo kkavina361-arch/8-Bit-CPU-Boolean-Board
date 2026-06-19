@@ -1,0 +1,108 @@
+# Module Hierarchy
+
+```text
+CPU_TOP
+│
+├── Clock Divider
+├── Program Loader
+├── Control Unit (FSM)
+│
+├── Program Counter (PC)
+├── Memory Address Register (MAR)
+├── RAM (16×8)
+├── Instruction Register (IR)
+│
+├── A Register
+├── B Register
+├── ALU
+├── Flag Register
+├── Output Register
+│
+├── Input Interface
+│
+└── Seven Segment Driver
+```
+
+## Module Description
+
+### Clock Divider
+
+Generates slow and fast clocks for CPU execution.
+
+### Program Loader
+
+Automatically loads demo programs into RAM.
+
+### Control Unit (FSM)
+
+Controls instruction fetch, decode, execute, wait-input and halt operations.
+
+### Program Counter (PC)
+
+Stores the address of the next instruction.
+
+### Memory Address Register (MAR)
+
+Stores the RAM address during memory operations.
+
+### RAM
+
+Stores program instructions and user data.
+
+### Instruction Register (IR)
+
+Stores the currently executing instruction.
+
+### A Register
+
+Stores the primary operand and ALU result.
+
+### B Register
+
+Stores the secondary operand.
+
+### ALU
+
+Performs arithmetic and logical operations.
+
+Supported Operations:
+
+* ADD
+* SUB
+* MUL
+* INC
+* DEC
+* CLR
+* SWP
+
+### Flag Register
+
+Stores processor status flags:
+
+* Zero Flag (Z)
+* Carry Flag (C)
+
+### Output Register
+
+Stores final output before display.
+
+### Input Interface
+
+Handles switch inputs, sensor inputs and user interaction.
+
+### Seven Segment Driver
+
+Drives the 8 seven-segment displays.
+
+Display Allocation:
+
+HEX7 HEX6 → Program Counter (PC)
+
+HEX5 HEX4 → Instruction Register (IR)
+
+HEX3 HEX2 → A Register
+
+HEX1 HEX0 → Output Register
+
+```
+```
