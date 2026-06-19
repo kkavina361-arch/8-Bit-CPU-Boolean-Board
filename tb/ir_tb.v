@@ -1,35 +1,59 @@
 module ir_tb;
+
 reg clk;
 reg rst;
 reg ii;
 reg [7:0] bus;
+
+wire [7:0] ir_data;
 wire [3:0] opcode;
 wire [3:0] operand;
-ir dut(.clk(clk),.rst(rst),.ii(ii),.bus(bus),.opcode(opcode),.operand(operand));
-initial begin
+
+ir dut(
+    .clk(clk),
+    .rst(rst),
+    .ii(ii),
+    .bus(bus),
+
+    .ir_data(ir_data),
+    .opcode(opcode),
+    .operand(operand)
+);
+
+always #5 clk = ~clk;
+
+initial
+begin
+
     clk = 0;
-    forever #5 clk = ~clk;
-end
-initial begin
     rst = 1;
-    ii  = 0;
-    bus = 8'b00000000;
-    #20;
-    rst = 0;
-    bus = 8'b00101100;
-    ii  = 1;
+    ii = 0;
+    bus = 8'h00;
+
+    #10 rst = 0;
+
+    bus = 8'h3C;
+    ii = 1;
     #10;
-    ii  = 0;
-    #20;
-    bus = 8'b00111101;
-    ii  = 1;
+
+    ii = 0;
     #10;
-    ii  = 0;
+
+    bus = 8'hB0;
+    ii = 1;
+    #10;
+
+    ii = 0;
+    #10;
+
+    bus = 8'h80;
+    ii = 1;
+    #10;
+
+    ii = 0;
     #20;
+
     $finish;
 end
-initial begin
-    $monitor("Time=%0t bus=%b opcode=%b operand=%b",
-              $time,bus,opcode,operand);
-end
+
 endmodule
