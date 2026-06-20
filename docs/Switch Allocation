@@ -1,17 +1,23 @@
-Switch Allocation
-Switch	Function
-SW[7:0]	8-bit Data Input
-SW[11:8]	RAM Address Input
-SW12	Program Mode Select
-SW13	Sensor/Input Source Select
-SW14	Clock Speed Select
-SW15	Demo Program Select
-Details
-SW[7:0]   -> Instruction/Data value
-SW[11:8]  -> RAM address
+# Switch Allocation
+
+| Switch   | Function                   |
+| -------- | -------------------------- |
+| SW[7:0]  | 8-bit Data Input           |
+| SW[11:8] | RAM Address Input          |
+| SW12     | Program Mode Select        |
+| SW13     | Sensor/Input Source Select |
+| SW14     | Clock Speed Select         |
+| SW15     | Demo Program Select        |
+
+## Details
+
+```text
+SW[7:0]   -> Instruction/Data Value
+
+SW[11:8]  -> RAM Address
 
 SW12 = 0  -> Manual Programming Mode
-SW12 = 1  -> Auto Program Loader Mode
+SW12 = 1  -> CPU Execution Mode
 
 SW13 = 0  -> Switch Input
 SW13 = 1  -> Sensor Input
@@ -19,38 +25,103 @@ SW13 = 1  -> Sensor Input
 SW14 = 0  -> Slow Clock
 SW14 = 1  -> Fast Clock
 
-SW15 = 0  -> Demo Program 0
-SW15 = 1  -> Demo Program 1
-Push Button Allocation
-Button	Function
-BTN0	Program Write
-BTN1	CPU Run
-BTN2	System Reset
-BTN3	Input Enter
-Details
-BTN0 -> Write instruction/data into RAM
-BTN1 -> Start CPU execution
-BTN2 -> Reset CPU, Registers, PC and Control Unit
-BTN3 -> Provide user input during IN instruction
-LED Allocation
-LED	Function
-GREEN_LED	Input Wait Indicator
-RED_LED	Halt Indicator
-Details
-GREEN LED ON -> CPU waiting for user input
-RED LED ON   -> HLT instruction executed
-Seven Segment Display Allocation
-Display	Function
-D0 Digit 0	Output Ones
-D0 Digit 1	Output Tens
-D0 Digit 2	Output Hundreds
-D0 Digit 3	Blank
-D1 Digit 0	Program Counter (PC)
-D1 Digit 1	Blank
-D1 Digit 2	Current Opcode
-D1 Digit 3	Current Operand
+SW15 = 0  -> Multiplication Demo
+SW15 = 1  -> Add/Sub Demo
+```
 
-Display Format:
+---
 
+# Push Button Allocation
+
+| Button | Function      |
+| ------ | ------------- |
+| BTN0   | Program Write |
+| BTN1   | CPU Run       |
+| BTN2   | System Reset  |
+| BTN3   | Input Enter   |
+
+## Details
+
+```text
+BTN0 -> Write Instruction/Data into RAM
+
+BTN1 -> Start CPU Execution
+
+BTN2 -> Reset CPU, Registers,
+        Program Counter,
+        Control Unit and Flags
+
+BTN3 -> Provide User Input
+        during IN/INS Instruction
+```
+
+---
+
+# LED Allocation
+
+| LED       | Function             |
+| --------- | -------------------- |
+| GREEN_LED | Input Wait Indicator |
+| RED_LED   | Halt Indicator       |
+
+## Details
+
+```text
+GREEN LED ON -> CPU Waiting for User Input
+
+RED LED ON   -> HLT Instruction Executed
+```
+
+---
+
+# Seven Segment Display Allocation
+
+| Display    | Function             |
+| ---------- | -------------------- |
+| D0 Digit 0 | Output Ones          |
+| D0 Digit 1 | Output Tens          |
+| D0 Digit 2 | Output Hundreds      |
+| D0 Digit 3 | Blank                |
+| D1 Digit 0 | Program Counter (PC) |
+| D1 Digit 1 | Blank                |
+| D1 Digit 2 | Current Opcode       |
+| D1 Digit 3 | Current Operand      |
+
+## Display Format
+
+```text
 [Hundreds][Tens][Ones][ ]
+
 [ PC ][ ][Opcode][Operand]
+```
+
+### Example
+
+```text
+Output = 125
+
+PC      = 6
+
+Opcode  = B
+
+Operand = 0
+```
+
+Display:
+
+```text
+125_
+
+6_B0
+```
+
+This allows real-time monitoring of:
+
+* CPU Output
+* Current Program Counter
+* Current Instruction Opcode
+* Current Instruction Operand
+
+```
+```
+
