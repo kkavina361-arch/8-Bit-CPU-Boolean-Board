@@ -30,7 +30,6 @@ Each instruction is 8 bits wide.
 | 1000   | HLT      | Halt CPU Execution                   |
 | 1001   | INS      | Read Sensor Input into A Register    |
 | 1010   | JMP      | Jump to Specified Address            |
-| 1011   | MUL      | A ← A × B (Repeated Addition Method) |
 | 1100   | INC      | A ← A + 1                            |
 | 1101   | DEC      | A ← A − 1                            |
 | 1110   | CLR      | Clear A Register (A ← 0)             |
